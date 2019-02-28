@@ -26,6 +26,12 @@ RUN chmod +x /run-corda.sh && \
     sync && \
     chown -R corda:corda /opt/corda
 
+ADD build/cordapps/*.jar /opt/corda/cordapps/
+
+EXPOSE 10002
+EXPOSE 10003
+EXPOSE 10004
+
 WORKDIR /opt/corda
 ENV HOME=/opt/corda
 USER corda
